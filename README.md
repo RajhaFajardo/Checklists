@@ -1,5 +1,5 @@
 # Checklists
-App made during the study os the section 2 of the book “UIKit Apprentice”. Apple Books
+App made during the study os the section 2 of the book “UIKit Apprentice”. Apple Books.
  
 This section goes from chapter 9 to 20.
 
@@ -9,6 +9,6 @@ This section goes from chapter 9 to 20.
 
 *Chapter 11: Navigation Controllers -> Add a navigation controller to Checklists to allow navigation between screens and add a button to the navigation bar to allow adding new items; Add the ability to delete rows from a list of items presented via a table view and create a new screen from which you can add new to-do items.
 
-*Chapter 12: Add Item Screen -> Add a static table view cell to the table to display the text field for data entry; Access the contents of the text field and improve the look and functionality of the Add Item screen
+*Chapter 12: Add Item Screen -> Add a static table view cell to the table to display the text field for data entry; Access the contents of the text field and improve the look and functionality of the Add Item screen.
 
- 
+*Chapter 13: Delegates & Protocols -> Add Item screen showing a keyboard that lets the user enter text. Sending messages from one view controller to another.
