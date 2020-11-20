@@ -15,6 +15,5 @@ This section goes from chapter 9 to 20.
 
 *Chapter 14: Edit Items -> Edit existing to-do items via the app interface; Using Xcode's built-in refactoring capability to rename code to be easily identifiable and fix missed code changes after the code refactoring using the Find navigator.
 
-*Chapter 15: Saving & Loading ->
-Data persistence; Determine where in the file system you can place the file that will store the to-do list items; Save checklist items and load the to-do items from the saved file when the app starts up again after termination.
+*Chapter 15: Saving & Loading -> Data persistence; Determine where in the file system you can place the file that will store the to-do list items; Save checklist items and load the to-do items from the saved file when the app starts up again after termination.
 
