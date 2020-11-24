@@ -19,3 +19,6 @@ This section goes from chapter 9 to 20.
 
 *Chapter 16: Lists -> Add a new view controller to show all the lists of to-do items; Complete the user interface for the All Lists screen; Display the to-do items for a selected list from the All Lists screen and add a view controller to add/edit checklists.
 
+*Chapter 17: Improved Data Model -> Update the data model so that the to-do items for a list are saved along with the list; Add some fake data to test that the new changes work correctly; Change your data saving strategy so that your data is only saved when the app is paused or terminated and hand over data saving/loading to the data model itself.
+
+
