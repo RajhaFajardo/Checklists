@@ -9,6 +9,7 @@ import UIKit
 class ChecklistViewController: UITableViewController, ItemDetailViewController {
     
     var items = [ChecklistItem]()
+    var checklist: Checklist!
     
     func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
         navigationController?.popViewController(animated: true)
@@ -78,6 +79,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewController {
         super.viewDidLoad()
         loadChecklistItems()
         navigationItem.largeTitleDisplayMode = .never
+        title = checklist.name
     }
     
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
