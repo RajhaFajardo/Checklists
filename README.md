@@ -21,4 +21,6 @@ This section goes from chapter 9 to 20.
 
 *Chapter 17: Improved Data Model -> Update the data model so that the to-do items for a list are saved along with the list; Add some fake data to test that the new changes work correctly; Change your data saving strategy so that your data is only saved when the app is paused or terminated and hand over data saving/loading to the data model itself.
 
+*Chapter 18: User Defaults -> Improve the user-experience by remembering the last open list on app re-launch; Adding in checks to guard against possible crashes and improving the first-run experience for the user so that the app looks more polished and user-friendly.
+
 
