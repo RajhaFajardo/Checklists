@@ -23,4 +23,8 @@ This section goes from chapter 9 to 20.
 
 *Chapter 18: User Defaults -> Improve the user-experience by remembering the last open list on app re-launch; Adding in checks to guard against possible crashes and improving the first-run experience for the user so that the app looks more polished and user-friendly.
 
+*Chapter 19: UI Improvements -> Show the number of to-do items remaining for each list; Sort the list of checklist items alphabetically; Add the ability to specify a helpful icon for each list item to indicate what the list is about and improve how the app looks by making a few basic color changes to give it its own unique style.
+
+
+
 
