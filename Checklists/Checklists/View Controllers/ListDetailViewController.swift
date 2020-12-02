@@ -39,7 +39,7 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate, Icon
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        textField.becomeFirstResponder()
+//        textField.becomeFirstResponder()
     }
     
     // MARK: - Actions
@@ -48,8 +48,15 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate, Icon
     }
     
     @IBAction func done() { // função que trata do funcionamento do botão done. Verifica se existe algo dentro do texto field, para então habilitar o botão done.
-        let checklist = Checklist(name: textField.text!, iconName: iconName)
-
+        if let checklist = checklistToEdit {
+            checklist.name = textField.text!
+//            checklist.iconName = iconName
+            delegate?.listDetailViewController(self, didFinishEditing: checklist)
+        } else {
+            let checklist = Checklist(name: textField.text!, iconName: iconName)
+//            checklist.iconName = iconName
+            delegate?.listDetailViewController(self, didFinishAdding: checklist)
+        }
     }
     
     // MARK: - Table View Delegates
