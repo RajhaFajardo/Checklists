@@ -25,6 +25,7 @@ This section goes from chapter 9 to 20.
 
 *Chapter 19: UI Improvements -> Show the number of to-do items remaining for each list; Sort the list of checklist items alphabetically; Add the ability to specify a helpful icon for each list item to indicate what the list is about and improve how the app looks by making a few basic color changes to give it its own unique style.
 
+*Chapter 20: Local Notifications -> Try out a local notification just to see how it works; Allow the user to pick a due date for to-do items; Create a date picker control and schedule local notifications for the to-do items, and update them when the user changes the due date.
 
 
 
