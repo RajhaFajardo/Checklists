@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 protocol ItemDetailViewControllerDelegate: class {// aqui foi criado um protocolo para tratar dos botoes de cancelar e editar um item.
     func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
@@ -16,6 +17,9 @@ protocol ItemDetailViewControllerDelegate: class {// aqui foi criado um protocol
 class ItemDetailViewController: UITableViewController, UITextFieldDelegate { //Essa ViewController trata da tela onde se adiciona novos item a uma lista.
     @IBOutlet weak var textField: UITextField! // declaração de outlets da tela.
     @IBOutlet weak var doneBarButton: UIBarButtonItem!// declaração de outlets da tela.
+    @IBOutlet var shouldRemindSwitch: UISwitch!
+    @IBOutlet var datePicker: UIDatePicker!
+    
     weak var delegate: ItemDetailViewControllerDelegate? //cria uma instancia de ItemDetailViewControllerDelegate para usar dentro da classe.
     var itemToEdit: ChecklistItem?
     
@@ -26,6 +30,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate { //E
             title = "Edit Item"
             textField.text = item.text
             doneBarButton.isEnabled = true
+            shouldRemindSwitch.isOn = item.shouldRemind
+            datePicker.date = item.dueDate
         }
     }
     
@@ -42,12 +48,32 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate { //E
     @IBAction func done() { // função que trata do funcionamento do botão done. Verifica se existe algo dentro do texto field, para então habilitar o botão done.
         if let item = itemToEdit {
             item.text = textField.text!
+            item.shouldRemind = shouldRemindSwitch.isOn
+            item.dueDate = datePicker.date
+            item.scheduleNotification()
+            
             delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             let item = ChecklistItem()
-            item.text = textField.text!
+            //            item.text = textField.text!
+            item.checked = false
+            
+            item.shouldRemind = shouldRemindSwitch.isOn
+            item.dueDate = datePicker.date
+            
             delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
+    }
+    
+    @IBAction func shouldRemindToggled(_ switchControl: UISwitch) {
+      textField.resignFirstResponder()
+
+      if switchControl.isOn {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) {_, _ in
+          // do nothing
+        }
+      }
     }
     
     // MARK: - Table View Delegates
